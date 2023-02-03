@@ -1,6 +1,6 @@
-const { override, useBabelRc } = require("customize-cra");
+import { override, useBabelRc } from 'customize-cra';
 
-module.exports = override(
+export default override(
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    useBabelRc()
+    useBabelRc(),
 );
