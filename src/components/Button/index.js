@@ -22,7 +22,6 @@ function Button({
     ...otherProps
 }) {
     let Component = 'button';
-
     const props = {
         onClick,
         ...otherProps,
@@ -58,9 +57,9 @@ function Button({
 
     return (
         <Component className={classes} {...props}>
-            {LeftIcon && <LeftIcon className={cx('left-icon', 'icon')} />}
+            {LeftIcon && <LeftIcon className={cx('icon')} />}
             <span className={cx('title')}>{children}</span>
-            {RightIcon && <RightIcon className={cx('right-icon', 'icon')} />}
+            {RightIcon && <RightIcon className={cx('icon')} />}
         </Component>
     );
 }
