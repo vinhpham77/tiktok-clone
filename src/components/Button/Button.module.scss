@@ -10,6 +10,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 
     + .wrapper {
         margin-left: 8px;
@@ -26,7 +27,7 @@
 
     .icon + .title,
     .title + .icon {
-        margin-left: 6px;
+        margin-left: 8px;
     }
 }
 
