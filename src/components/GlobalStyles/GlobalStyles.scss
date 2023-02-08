@@ -1,5 +1,45 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Bold.woff');
+    font-weight: 700;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Semibold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: sofiapro;
+    src: url('/assets/fonts/sofiapro-bold.woff');
+    font-weight: 700;
+}
+@font-face {
+    font-family: sofiapro;
+    src: url('/assets/fonts/sofiapro-semibold.otf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: sofiapro;
+    src: url('/assets/fonts/sofiapro-medium.woff');
+    font-weight: 500;
+}
+@font-face {
+    font-family: sofiapro;
+    src: url('/assets/fonts/sofiapro-regular.woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Regular.woff2');
+    font-weight: 400;
+}
 
 :root {
     --primary-color: 254, 44, 85;
@@ -13,7 +53,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: inherit;
+    font-family: 'ProximaNova', sans-serif;
 }
 
 html {
@@ -21,7 +61,6 @@ html {
 }
 
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -39,7 +78,7 @@ a[href] {
 }
 
 // Custom tippy tooltip
-.tippy-box {
+.tippy-box:not(.dummy) {
     $tippy-box-bgc: rgba(84, 84, 84, 0.92);
 
     border-radius: 8px;
