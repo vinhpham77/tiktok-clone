@@ -1,23 +1,23 @@
 import classNames from 'classnames/bind';
 import styles from './Account.module.scss';
-import { BsFillCheckCircleFill } from 'react-icons/bs';
-
+import { CheckCircleIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 const cx = classNames.bind(styles);
 
 function AccountItem() {
     return (
         <div className={cx('wrapper')}>
-            <img
+            <Image
                 className={cx('avatar')}
-                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tiktok-obj/1610321846996993.jpeg?x-expires=1675782000&x-signature=0Fj%2FYQ2xF%2BNdItFTWh1yRMn7N3Q%3D"
-                alt="Hoaa"
+                src="https://scontent.fdad3-1.fna.fbcdn.net/v/t1.6435-9/54798713_839835193036669_8703457475350757376_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=174925&_nc_ohc=1s1HTYa22DgAX-JfXCi&_nc_ht=scontent.fdad3-1.fna&oh=00_AfD-2HD6RtkW_1YRCoKMrWXKCYKzH019zjXjEo1hLKSlAw&oe=640B09DE"
+                alt="Hoa"
             />
             <div className={cx('info')}>
                 <h4 className={cx('username')}>
-                    <span>Nguyen Van A</span>
-                    <BsFillCheckCircleFill />
+                    <span>nguyenvana</span>
+                    <CheckCircleIcon />
                 </h4>
-                <p className={cx('fullname')}>nguyenvana</p>
+                <p className={cx('fullname')}>Nguyễn Văn A</p>
             </div>
         </div>
     );
