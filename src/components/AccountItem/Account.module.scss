@@ -13,9 +13,6 @@
     margin-right: 12px;
 }
 
-.info {
-}
-
 .username {
     line-height: 22px;
 
@@ -29,7 +26,8 @@
 
     svg {
         font-size: 1.4rem;
-        margin-left: 4px;
+        margin-left: 6px;
+        transform: translateY(1px);
         color: rgb(32, 213, 236);
     }
 }
