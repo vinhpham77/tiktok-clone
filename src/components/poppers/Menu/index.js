@@ -9,7 +9,7 @@ import { useState } from 'react';
 const cx = classNames.bind(styles);
 const defaultFunc = () => {};
 
-function Menu({ children, items = [], onChange = defaultFunc }) {
+function Menu({ children, items = [], onChange = defaultFunc, hideOnClick = false }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
@@ -37,6 +37,7 @@ function Menu({ children, items = [], onChange = defaultFunc }) {
         <Tippy
             interactive
             delay={[0, 500]}
+            hideOnClick={hideOnClick}
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu')} tabIndex="-1" {...attrs}>
