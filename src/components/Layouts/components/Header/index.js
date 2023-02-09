@@ -1,16 +1,12 @@
 import classNames from 'classnames/bind';
-import TippyHeadless from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import images from '~/assets/images';
 import styles from './Header.module.scss';
-import { useEffect, useState } from 'react';
-import { PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import MenuPopper from '~/components/Popper/Menu';
 import 'tippy.js/dist/tippy.css';
 import Image from '~/components/Image';
-
+import Search from '../Search';
 import {
     UserIcon,
     QuestionIcon,
@@ -22,10 +18,8 @@ import {
     KeyboardIcon,
     LiveIcon,
     LanguageIcon,
-    SearchIcon,
     PlaneIcon,
     EffectIcon,
-    XCircleIcon,
     PlusIcon,
     EllipsisVerticalIcon,
 } from '~/components/Icons';
@@ -91,14 +85,6 @@ const MENU_USER_ITEMS = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
-
-    useEffect(() => {
-        setTimeout(() => {
-            // setSearchResult([1, 2]);
-        }, 0);
-    }, []);
-
     const handleMenuChanged = () => {};
 
     const user = 'a';
@@ -107,31 +93,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <Image src={images.logo} alt="logo" className={cx('logo')} />
-                <TippyHeadless
-                    interactive
-                    visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input spellCheck="false" placeholder="Search accounts and videos" />
-                        <button className={cx('search-clear')}>
-                            <XCircleIcon />
-                        </button>
-                        <button className={cx('search-btn')}>
-                            <SearchIcon />
-                        </button>
-                    </div>
-                </TippyHeadless>
-
+                <Search />
                 <div className={cx('actions')}>
                     <Button outline LeftIcon={PlusIcon}>
                         Upload

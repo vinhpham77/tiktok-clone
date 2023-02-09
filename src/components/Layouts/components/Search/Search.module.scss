@@ -1,0 +1,112 @@
+.search {
+    --hor-search-padding: 16px;
+    --search-height: 46px;
+    $search-width: 361px;
+
+    display: flex;
+    align-items: center;
+    width: $search-width;
+    border-radius: 92px;
+    border: 1px solid transparent;
+    background-color: rgba(var(--black), 0.06);
+    height: var(--search-height);
+    padding: 12px var(--hor-search-padding);
+    overflow: hidden;
+
+    &:focus-within {
+        border-color: rgba(var(--black), 0.2);
+    }
+
+    &-result {
+        width: $search-width;
+    }
+
+    input {
+        border-style: none;
+        background-color: transparent;
+        flex: 1;
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: var(--text-color);
+        caret-color: var(--primary-color);
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn svg {
+        color: rgba(var(--black), 0.75);
+    }
+
+    input:placeholder-shown ~ .search-clear {
+        display: none;
+    }
+}
+
+.search-clear,
+.search-loader {
+    width: 40px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        font-size: 1.6rem;
+        color: rgba(var(--black), 0.34);
+    }
+}
+
+.search-loader {
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.search-btn {
+    width: 52px;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: calc(0px - var(--hor-search-padding));
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        background-color: rgba(var(--black), 0.03);
+    }
+
+    &:active {
+        background-color: rgba(var(--black), 0.06);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        display: block;
+        width: 0.5px;
+        height: calc(var(--search-height) - 18px);
+        background-color: rgba(var(--black), 0.12);
+    }
+
+    svg {
+        font-size: 2.4rem;
+        color: rgba(var(--black), 0.34);
+    }
+}
+
+.accounts-title {
+    padding: 10px 12px 6px;
+    font-size: 1.4rem;
+    line-height: 20px;
+    font-weight: 600;
+    color: rgba(var(--black), 0.5);
+}
