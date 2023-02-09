@@ -11,6 +11,6 @@ export const search = async (q, type = 'less') => {
 
         return res.data;
     } catch (error) {
-        console.error(error);
+        throw new Error(error.message);
     }
 };

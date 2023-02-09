@@ -16,7 +16,7 @@ function Search() {
     const [inputValue, setInputValue] = useState('');
     const [isResultShown, setIsResultShown] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
-    const debouncer = useDebounce(inputValue, 700);
+    const debounce = useDebounce(inputValue, 700);
 
     const handleClearingSearch = () => {
         setInputValue('');
@@ -28,8 +28,23 @@ function Search() {
         setIsResultShown(false);
     };
 
+    const handleChanging = (e) => {
+        let searchValue = e.target.value;
+
+        if (searchValue.startsWith(' ')) {
+            return;
+        } else {
+            setInputValue(searchValue);
+        }
+    };
+
+    const handleSubmitting = (e) => {
+        inputRef.current.blur();
+        e.preventDefault();
+    };
+
     useEffect(() => {
-        if (!debouncer.trim()) {
+        if (!debounce.trim()) {
             setSearchResult([]);
             return;
         }
@@ -37,13 +52,21 @@ function Search() {
         setIsLoading(true);
         const fetchAPI = async () => {
             setIsLoading(true);
-            const result = await search(debouncer);
-            setIsLoading(false);
-            setSearchResult(result);
+            let result;
+
+            try {
+                result = await search(debounce);
+            } catch (error) {
+                result = [];
+                console.error(error);
+            } finally {
+                setIsLoading(false);
+                setSearchResult(result);
+            }
         };
 
         fetchAPI();
-    }, [debouncer]);
+    }, [debounce]);
 
     return (
         <TippyHeadless
@@ -67,7 +90,7 @@ function Search() {
                     value={inputValue}
                     spellCheck="false"
                     placeholder="Search accounts and videos"
-                    onChange={(e) => setInputValue(e.target.value)}
+                    onChange={handleChanging}
                     onFocus={() => setIsResultShown(true)}
                 />
 
@@ -81,7 +104,7 @@ function Search() {
                         <LoaderIcon />
                     </p>
                 )}
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={handleSubmitting}>
                     <SearchIcon />
                 </button>
             </div>
