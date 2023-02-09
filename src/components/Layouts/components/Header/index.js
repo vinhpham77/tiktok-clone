@@ -7,6 +7,9 @@ import MenuPopper from '~/components/poppers/Menu';
 import 'tippy.js/dist/tippy.css';
 import Image from '~/components/Image';
 import Search from '../Search';
+import { Link } from 'react-router-dom';
+import routesConfig from '~/config/routes';
+
 import {
     UserIcon,
     QuestionIcon,
@@ -92,7 +95,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Image src={images.logo} alt="logo" className={cx('logo')} />
+                <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <Image src={images.logo} alt="logo" className={cx('logo')} />
+                </Link>
                 <Search />
                 <div className={cx('actions')}>
                     <Button outline LeftIcon={PlusIcon}>
