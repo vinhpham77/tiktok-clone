@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './AccountItem.module.scss';
-import { CheckCircleIcon } from '~/components/Icons';
+import { CheckCircleIcon } from '~/components/icons';
 import Image from '~/components/Image';
 import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);

@@ -1,4 +1,4 @@
-import { HeaderOnly } from '~/components/Layouts';
+import { HeaderOnly } from '~/components/layouts';
 
 const { default: Home } = require('~/pages/Home');
 const { default: Profile } = require('~/pages/Profile');

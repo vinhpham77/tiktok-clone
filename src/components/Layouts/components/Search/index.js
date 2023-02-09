@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import TippyHeadless from '@tippyjs/react/headless';
-import { PopperWrapper } from '~/components/Popper';
+import { PopperWrapper } from '~/components/poppers';
 import AccountItem from '~/components/AccountItem';
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
+import { useDebounce } from '~/hooks';
 
-import { LoaderIcon, SearchIcon, XCircleIcon } from '~/components/Icons';
+import { LoaderIcon, SearchIcon, XCircleIcon } from '~/components/icons';
 
 const cx = classNames.bind(styles);
 
@@ -15,6 +16,7 @@ function Search() {
     const [inputValue, setInputValue] = useState('');
     const [isResultShown, setIsResultShown] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
+    const debouncer = useDebounce(inputValue, 700);
 
     const handleClearingSearch = () => {
         setInputValue('');
@@ -27,23 +29,26 @@ function Search() {
     };
 
     useEffect(() => {
-        if (!inputValue.trim()) {
+        if (!debouncer.trim()) {
             setSearchResult([]);
             return;
         }
 
-        let value = encodeURIComponent(inputValue);
+        setIsLoading(true);
+
+        let value = encodeURIComponent(debouncer);
         const tiktokAPI = `https://tiktok.fullstack.edu.vn/api/users/search?q=${value}&type=less`;
+
         fetch(tiktokAPI)
-            .then((response) => {
-                setIsLoading(true);
-                return response.json();
-            })
+            .then((response) => response.json())
             .then((json) => {
                 setSearchResult(json.data);
                 setIsLoading(false);
+            })
+            .catch(() => {
+                setIsLoading(false);
             });
-    }, [inputValue]);
+    }, [debouncer]);
 
     return (
         <TippyHeadless

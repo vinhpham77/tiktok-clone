@@ -3,7 +3,7 @@ import Tippy from '@tippyjs/react';
 import images from '~/assets/images';
 import styles from './Header.module.scss';
 import Button from '~/components/Button';
-import MenuPopper from '~/components/Popper/Menu';
+import MenuPopper from '~/components/poppers/Menu';
 import 'tippy.js/dist/tippy.css';
 import Image from '~/components/Image';
 import Search from '../Search';
@@ -22,7 +22,7 @@ import {
     EffectIcon,
     PlusIcon,
     EllipsisVerticalIcon,
-} from '~/components/Icons';
+} from '~/components/icons';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [

@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
-import { ChevronLeftIcon } from '~/components/Icons';
+import { ChevronLeftIcon } from '~/components/icons';
 const cx = classNames.bind(styles);
 
 function Header({ title, onBack }) {
