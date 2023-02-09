@@ -3,6 +3,11 @@
     align-items: center;
     padding: 9px 16px;
     cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        background-color: rgba(var(--black), 0.03);
+    }
 }
 
 .avatar {
