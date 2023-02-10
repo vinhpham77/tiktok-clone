@@ -5,6 +5,16 @@
 .menu-popper {
     --menu-ver-padding: 8px;
     padding: var(--menu-ver-padding) 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-header {
+    flex-shrink: 0;
+}
+
+.menu-body {
+    overflow-y: auto;
 }
 
 .menu-item:not(#dummy) {
