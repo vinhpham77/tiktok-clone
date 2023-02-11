@@ -6,10 +6,13 @@
 }
 
 .container {
+    $left-pad: calc(var(--default-layout-hor-padding) - 4px);
+    $right-pad: var(--default-layout-hor-padding);
     width: var(--default-layout-width);
+    max-width: 100%;
     min-height: 1000px;
     display: flex;
-    padding: 0 var(--default-layout-hor-padding);
+    padding: 0 $right-pad 0 $left-pad;
     margin-top: var(--default-layout-header-height);
 }
 

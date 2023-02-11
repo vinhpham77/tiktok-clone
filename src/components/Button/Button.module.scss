@@ -2,7 +2,7 @@
     border-radius: 4px;
     padding: 9px 16px;
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     background-color: white;
     border: 1px solid transparent;
@@ -24,6 +24,8 @@
 
     .icon {
         font-size: 2rem;
+        display: flex;
+        align-items: center;
     }
 
     .icon + .title,

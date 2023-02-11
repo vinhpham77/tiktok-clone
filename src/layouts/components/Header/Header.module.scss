@@ -23,13 +23,16 @@
 .logo-link {
     display: flex;
     align-items: center;
+    min-width: 300px;
 }
 
 .actions {
-    --actions-height: 36px;
     display: flex;
     align-items: center;
-    height: var(--actions-height);
+}
+
+.upload-btn {
+    height: 36px;
 }
 
 .more-btn {
@@ -60,8 +63,8 @@
 }
 
 .user-avatar {
-    height: var(--actions-height);
-    width: var(--actions-height);
+    height: 32px;
+    width: 32px;
     border-radius: 50%;
     margin-left: 24px;
     cursor: pointer;
