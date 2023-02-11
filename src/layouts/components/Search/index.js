@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
 import { LoaderIcon, SearchIcon, XCircleIcon } from '~/components/icons';
-import { search } from '~/apiServices/searchServices.js';
+import { search } from '~/services/searchService.js';
 
 const cx = classNames.bind(styles);
 
