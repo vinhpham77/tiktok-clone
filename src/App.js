@@ -2,11 +2,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from './routes';
 import { DefaultLayout } from '~/layouts';
 import { Fragment } from 'react';
+import classNames from 'classnames/bind';
+import styles from './App.module.scss';
+
+const cx = classNames.bind(styles);
 
 function App() {
     return (
         <BrowserRouter>
-            <div className="App">
+            <div className={cx('wrapper')}>
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         let Layout = DefaultLayout;
