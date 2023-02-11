@@ -14,9 +14,9 @@ function Search() {
     const [searchResult, setSearchResult] = useState([]);
     const inputRef = useRef();
     const [inputValue, setInputValue] = useState('');
-    const [isResultShown, setIsResultShown] = useState(true);
+    const [isResultShown, setIsResultShown] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const debounce = useDebounce(inputValue, 700);
+    const debounceValue = useDebounce(inputValue, 700);
 
     const handleClearingSearch = () => {
         setInputValue('');
@@ -44,7 +44,7 @@ function Search() {
     };
 
     useEffect(() => {
-        if (!debounce.trim()) {
+        if (!debounceValue.trim()) {
             setSearchResult([]);
             return;
         }
@@ -55,7 +55,7 @@ function Search() {
             let result;
 
             try {
-                result = await search(debounce);
+                result = await search(debounceValue);
             } catch (error) {
                 result = [];
                 console.error(error);
@@ -66,7 +66,7 @@ function Search() {
         };
 
         fetchAPI();
-    }, [debounce]);
+    }, [debounceValue]);
 
     return (
         // Interactive tippy element may not be accessible via keyboard navigation
