@@ -11,17 +11,17 @@ import { Link } from 'react-router-dom';
 import config from '~/config';
 
 import {
-    UserIcon,
-    QuestionIcon,
-    TikTokCoinIcon,
-    InboxIcon,
+    UserOutlineIcon,
+    QuestionOutlineIcon,
+    TikTokCoinOutlineIcon,
+    InboxOutlineIcon,
     LogOutIcon,
-    MoonIcon,
-    GearIcon,
-    KeyboardIcon,
-    LiveIcon,
-    LanguageIcon,
-    PlaneIcon,
+    MoonOutlineIcon,
+    GearOutlineIcon,
+    KeyboardOutlineIcon,
+    LiveOutlineIcon,
+    LanguageOutlineIcon,
+    PlaneOutlineIcon,
     EffectIcon,
     PlusIcon,
     EllipsisVerticalIcon,
@@ -30,7 +30,7 @@ import {
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
-        icon: LanguageIcon,
+        Icon: LanguageOutlineIcon,
         title: 'English',
         children: {
             title: 'Language',
@@ -47,41 +47,41 @@ const MENU_ITEMS = [
         },
     },
     {
-        icon: QuestionIcon,
+        Icon: QuestionOutlineIcon,
         title: 'Feedback and help',
         to: '/feedback',
     },
     {
-        icon: KeyboardIcon,
+        Icon: KeyboardOutlineIcon,
         title: 'Keyboard shortcuts',
     },
     {
-        icon: MoonIcon,
+        Icon: MoonOutlineIcon,
         title: 'Dark mode',
     },
 ];
 
 const MENU_USER_ITEMS = [
     {
-        icon: UserIcon,
+        Icon: UserOutlineIcon,
         title: 'View profile',
         to: '/@user123',
     },
     {
-        icon: TikTokCoinIcon,
+        Icon: TikTokCoinOutlineIcon,
         title: 'Get coins',
     },
     {
-        icon: LiveIcon,
+        Icon: LiveOutlineIcon,
         title: 'Live Studio',
     },
     {
-        icon: GearIcon,
+        Icon: GearOutlineIcon,
         title: 'Setting',
     },
     ...MENU_ITEMS,
     {
-        icon: LogOutIcon,
+        Icon: LogOutIcon,
         title: 'Log out',
         separate: true,
     },
@@ -100,7 +100,7 @@ function Header() {
                 </Link>
                 <Search />
                 <div className={cx('actions')}>
-                    <Button outline LeftIcon={PlusIcon}>
+                    <Button outline LeftIcon={<PlusIcon />} className={cx('upload-btn')}>
                         Upload
                     </Button>
                     {!user && <Button primary>Login</Button>}
@@ -113,12 +113,12 @@ function Header() {
                         <>
                             <Tippy content="Messages">
                                 <button className={cx('icon-btn')}>
-                                    <PlaneIcon size="2.6rem" />
+                                    <PlaneOutlineIcon size="2.6rem" />
                                 </button>
                             </Tippy>
                             <Tippy content="Inbox">
                                 <button className={cx('icon-btn')}>
-                                    <InboxIcon size="3.2rem" />
+                                    <InboxOutlineIcon size="3.2rem" />
                                 </button>
                             </Tippy>
                         </>

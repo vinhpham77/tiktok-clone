@@ -11,7 +11,7 @@ function MenuItem({ data, onClick }) {
     });
 
     return (
-        <Button LeftIcon={data.icon} to={data.to} className={classes} onClick={onClick}>
+        <Button LeftIcon={<data.Icon />} to={data.to} className={classes} onClick={onClick}>
             {data.title}
         </Button>
     );

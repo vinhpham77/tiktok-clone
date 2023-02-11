@@ -58,9 +58,9 @@ function Button({
 
     return (
         <Component className={classes} {...props}>
-            {LeftIcon && <LeftIcon className={cx('icon')} />}
+            {LeftIcon && <span className={cx('icon')}>{LeftIcon}</span>}
             <span className={cx('title')}>{children}</span>
-            {RightIcon && <RightIcon className={cx('icon')} />}
+            {RightIcon && <span className={cx('icon')}>{RightIcon}</span>}
         </Component>
     );
 }
@@ -78,8 +78,8 @@ Button.propTypes = {
     large: PropTypes.bool,
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
-    LeftIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-    RightIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+    LeftIcon: PropTypes.node,
+    RightIcon: PropTypes.node,
 };
 
 export default Button;
