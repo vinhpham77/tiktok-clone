@@ -31,9 +31,9 @@ function Sidebar() {
                     icon={<UserGroupOutlineIcon />}
                     activeIcon={<UserGroupIcon />}
                 />
-                <MenuItem title="Live" to={config.routes.live} icon={<LiveOutlineIcon />} activeIcon={<LiveIcon />} />
+                <MenuItem title="LIVE" to={config.routes.live} icon={<LiveOutlineIcon />} activeIcon={<LiveIcon />} />
             </Menu>
-            <SuggestedAccounts label="Suggested Accounts" />
+            <SuggestedAccounts label="Suggested accounts" previewable />
             <SuggestedAccounts label="Following" />
         </aside>
     );

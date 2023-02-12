@@ -8,10 +8,6 @@
 .wrapper > * {
     position: relative;
 
-    &:not(:last-child) {
-        margin-bottom: 8px;
-    }
-
     + *::before {
         content: '';
         position: absolute;
@@ -19,6 +15,6 @@
         left: var(--sidebar-horizontal-space);
         right: var(--sidebar-horizontal-space);
         height: 0.5px;
-        background-color: rgba(var(--black), 0.12);
+        background-color: rgba(var(--black), 0.06);
     }
 }

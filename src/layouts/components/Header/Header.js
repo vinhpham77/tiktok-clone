@@ -101,7 +101,7 @@ function Header() {
                 <Search />
                 <div className={cx('actions')}>
                     <Button outline LeftIcon={<PlusIcon />} className={cx('upload-btn')}>
-                        Upload
+                        <span className={cx('upload-title')}>Upload</span>
                     </Button>
                     {!user && <Button primary>Login</Button>}
                     <Tippy content="Create effects">
