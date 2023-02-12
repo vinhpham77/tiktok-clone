@@ -46,7 +46,9 @@
     --black: 22, 24, 35;
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
-    --default-layout-hor-padding: 24px;
+    --default-layout-left-pad: 20px;
+    // due to scroll width (overlay)
+    --default-layout-right-pad: calc(var(--default-layout-left-pad) + 4px);
 }
 
 * {

@@ -1,19 +1,16 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
+    max-width: var(--default-layout-width);
+    width: 100vw;
 }
 
 .container {
-    $left-pad: calc(var(--default-layout-hor-padding) - 4px);
-    $right-pad: var(--default-layout-hor-padding);
     width: var(--default-layout-width);
     max-width: 100%;
     min-height: 1000px;
     display: flex;
-    padding: 0 $right-pad 0 $left-pad;
     margin-top: var(--default-layout-header-height);
+    padding-right: var(--default-layout-right-pad);
 }
 
 .content {
