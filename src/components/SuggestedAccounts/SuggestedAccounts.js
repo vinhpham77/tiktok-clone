@@ -5,13 +5,48 @@ import styles from './SuggestedAccounts.module.scss';
 
 const cx = classNames.bind(styles);
 
-function SuggestedAccounts({ label }) {
+const data = [
+    {
+        nickname: 'ngodat',
+        full_name: 'Ngô Văn Đạt',
+        avatar: 'https://aaaaa',
+        tick: true,
+        followers_count: 7.2,
+        likes_count: 23.6,
+    },
+    {
+        nickname: 'ngodat',
+        full_name: 'Ngô Văn Đạt',
+        avatar: 'https://aaaaa',
+        tick: true,
+        followers_count: 7.2,
+        likes_count: 23.6,
+    },
+    {
+        nickname: 'ngodat',
+        full_name: 'Ngô Văn Đạt',
+        avatar: 'https://aaaaa',
+        tick: true,
+        followers_count: 7.2,
+        likes_count: 23.6,
+    },
+    {
+        nickname: 'ngodat',
+        full_name: 'Ngô Văn Đạt',
+        avatar: 'https://aaaaa',
+        tick: true,
+        followers_count: 7.2,
+        likes_count: 23.6,
+    },
+];
+
+function SuggestedAccounts({ label, previewable = false }) {
     return (
         <div className={cx('wrapper')}>
             <p className={cx('label')}>{label}</p>
-            <AccountItem />
-            <AccountItem />
-            <AccountItem />
+            {data.map((item, index) => {
+                return <AccountItem key={index} data={item} previewable={previewable} />;
+            })}
             <button className={cx('view-controller')}>See all</button>
         </div>
     );
@@ -19,6 +54,7 @@ function SuggestedAccounts({ label }) {
 
 SuggestedAccounts.propTypes = {
     label: PropTypes.string.isRequired,
+    previewable: PropTypes.bool,
 };
 
 export default SuggestedAccounts;
