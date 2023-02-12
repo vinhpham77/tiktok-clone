@@ -1,0 +1,82 @@
+.wrapper {
+    padding: 16px 0;
+    color: rgba(var(--black), 0.75);
+    font-weight: 600;
+}
+
+.label {
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+    line-height: 20px;
+    padding: 0 var(--sidebar-horizontal-space);
+}
+
+.item {
+    display: flex;
+    text-decoration: none;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: var(--sidebar-horizontal-space);
+    border-radius: 4px;
+    transition: background 200ms ease-in-out 0s;
+
+    &:hover {
+        background-color: rgba(var(--black), 0.03);
+    }
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 1.6rem;
+}
+
+.info {
+    flex: 1;
+}
+
+.username-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.username {
+    color: rgb(var(--black));
+    font-family: SofiaPro, Arial, Tahoma, sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 22px;
+    margin-top: -2px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.tick {
+    color: rgb(32, 213, 236);
+    margin-left: 4px;
+}
+
+.fullname {
+    color: rgba(var(--black), 0.75);
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.view-controller {
+    color: rgb(var(--primary-color));
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 20px;
+    padding: 0 var(--sidebar-horizontal-space);
+    cursor: pointer;
+    margin-top: 8px;
+}

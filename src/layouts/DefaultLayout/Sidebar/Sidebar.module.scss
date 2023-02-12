@@ -1,5 +1,24 @@
 .wrapper {
+    --sidebar-horizontal-space: 8px;
     width: 356px;
     min-height: 1000px;
-    padding: 20px 0 26px;
+    padding: 20px var(--sidebar-horizontal-space) 26px;
+}
+
+.wrapper > * {
+    position: relative;
+
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+
+    + *::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: var(--sidebar-horizontal-space);
+        right: var(--sidebar-horizontal-space);
+        height: 0.5px;
+        background-color: rgba(var(--black), 0.12);
+    }
 }
